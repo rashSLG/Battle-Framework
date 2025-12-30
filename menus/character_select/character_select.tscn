@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kulyqmhcf2k2"]
+[gd_scene load_steps=11 format=3 uid="uid://kulyqmhcf2k2"]
 
 [ext_resource type="Script" uid="uid://bl12xr1kfvop2" path="res://menus/character_select/character_select.gd" id="1_xptye"]
 [ext_resource type="PackedScene" uid="uid://dmqtdie76rgi8" path="res://menus/background.tscn" id="2_kxvnc"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://dkvj5h5bvohkv" path="res://menus/character_select/mapselect.gd" id="4_pprmj"]
 [ext_resource type="PackedScene" uid="uid://bu74bh1pcju6h" path="res://menus/character_select/cursor_arrows.tscn" id="4_xarbf"]
 [ext_resource type="Texture2D" uid="uid://dlpflfbgbkx5f" path="res://icon.png" id="5_3f6ee"]
+[ext_resource type="Texture2D" uid="uid://ct1tumve1adg2" path="res://assets/ui/menus/MAPtextsprite.png" id="5_4skbe"]
+[ext_resource type="Texture2D" uid="uid://djybc7sc3sq64" path="res://assets/ui/menus/ruleiconsprite.png" id="8_qenn8"]
+[ext_resource type="Texture2D" uid="uid://bssfj42febu4g" path="res://assets/ui/menus/RULEtextsprite.png" id="9_kthgr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pprmj"]
 shader = ExtResource("3_xarbf")
@@ -32,6 +35,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_pprmj")
+
+[node name="TextureRect" type="TextureRect" parent="MAPSELECT"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 168.0
+offset_bottom = 40.0
+texture = ExtResource("5_4skbe")
 
 [node name="StageSelect" type="OptionButton" parent="MAPSELECT"]
 visible = false
@@ -79,16 +89,6 @@ grow_horizontal = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="MAPSELECT/ScrollContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MAPSELECT"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 32.0
-offset_right = 104.0
-offset_bottom = 81.0
-text = "Image 
-Preview"
-horizontal_alignment = 1
-
 [node name="CSS" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -131,20 +131,28 @@ offset_bottom = 113.0
 text = "Placeholder!
 Check back later!"
 
-[node name="MapSelectButton" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="RULESELECT"]
 layout_mode = 0
-offset_right = 52.0
-offset_bottom = 31.0
-focus_mode = 0
-text = "MAPS"
+offset_left = 80.0
+offset_right = 168.0
+offset_bottom = 40.0
+texture = ExtResource("8_qenn8")
 
-[node name="RuleSelectButton" type="Button" parent="."]
+[node name="MapSelectButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 184.0
-offset_right = 241.0
-offset_bottom = 31.0
+offset_right = 56.0
+offset_bottom = 32.0
 focus_mode = 0
-text = "RULES"
+stretch_mode = 4
+
+[node name="RuleSelectButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_right = 240.0
+offset_bottom = 48.0
+focus_mode = 0
+texture_normal = ExtResource("9_kthgr")
+stretch_mode = 4
 
 [node name="CSSSelectButton" type="Button" parent="."]
 visible = false

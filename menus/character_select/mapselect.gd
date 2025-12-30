@@ -17,15 +17,18 @@ func _process(delta: float) -> void:
 		stage_step += 1
 		if stage_step >= stages.size():
 			stage_step = 0
-		Update_UI_Visuals(stages[stage_step], null)
+		var stage_image = GameData._stage_info_dict[stages[stage_step]].image_preview
+		Update_UI_Visuals(stages[stage_step], stage_image)
 		
 	if Input.is_action_just_pressed("left1"):
 		stage_step -= 1
 		if stage_step <= 0:
 			stage_step = stages.size() - 1
-		Update_UI_Visuals(stages[stage_step], null)
+		var stage_image = GameData._stage_info_dict[stages[stage_step]].image_preview
+		Update_UI_Visuals(stages[stage_step], stage_image)
 		
 	if Input.is_action_just_pressed("attack1"):
+		#is there a way to "clean" the names into better looking versions without changing all the references?
 		if selected_stages.size() < max_selected_stages:
 			selected_stages.append(stages[stage_step])
 			var new_nametag = Label.new()
@@ -35,7 +38,6 @@ func _process(delta: float) -> void:
 			print("maximum number of stages selected!")
 
 func Update_UI_Visuals(nametag : String, stage_image):
-	#for now, i'm skipping the image
 	StageNameTag.text = nametag
 	if stage_image != null:
 		ImagePreview.texture = stage_image
