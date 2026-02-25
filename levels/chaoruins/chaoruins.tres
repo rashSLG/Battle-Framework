@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="StageInfo" load_steps=2 format=3 uid="uid://c1co5spf3nln4"]
+[gd_resource type="Resource" script_class="StageInfo" load_steps=3 format=3 uid="uid://c1co5spf3nln4"]
 
+[ext_resource type="Texture2D" uid="uid://pn5f81itn2y6" path="res://assets/ui/menus/map-select/fullicons/chaosruins.png" id="1_ev7ha"]
 [ext_resource type="Script" uid="uid://bh7hc4po624b3" path="res://levels/stage_info.gd" id="1_g5g0e"]
 
 [resource]
 script = ExtResource("1_g5g0e")
 display_name = "Chao Ruins"
 music_file_path = "uid://5g2iwiaxee16"
+image_preview = ExtResource("1_ev7ha")
 metadata/_custom_type_script = "uid://bh7hc4po624b3"

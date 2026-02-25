@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StageInfo" load_steps=3 format=3 uid="uid://c604bw522othc"]
 
 [ext_resource type="Script" uid="uid://bh7hc4po624b3" path="res://levels/stage_info.gd" id="1_2rewn"]
-[ext_resource type="Texture2D" uid="uid://cascafa025kvl" path="res://assets/stageimagepreviews/amysroompreview.png" id="1_cob73"]
+[ext_resource type="Texture2D" uid="uid://b5xhjvi5qsaqq" path="res://assets/ui/menus/map-select/fullicons/amysroom.png" id="1_cob73"]
 
 [resource]
 script = ExtResource("1_2rewn")

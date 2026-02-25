@@ -4,6 +4,8 @@ extends Control
 @onready var StageNameTag = $Label
 @onready var SelectedStageList = $ScrollContainer/VBoxContainer
 
+@onready var cursor_arrows = $CursorArrows
+
 var stages
 var stage_step : int = 0
 var max_selected_stages : int = 5
@@ -13,18 +15,20 @@ func _ready() -> void:
 	stages = GameData.battle_stages
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("right1"):
+	if Input.is_action_just_pressed("up1"):
 		stage_step += 1
 		if stage_step >= stages.size():
 			stage_step = 0
 		var stage_image = GameData._stage_info_dict[stages[stage_step]].image_preview
+		play_cursor_anim("ArrowRightBump")
 		Update_UI_Visuals(stages[stage_step], stage_image)
 		
-	if Input.is_action_just_pressed("left1"):
+	if Input.is_action_just_pressed("down1"):
 		stage_step -= 1
 		if stage_step <= 0:
 			stage_step = stages.size() - 1
 		var stage_image = GameData._stage_info_dict[stages[stage_step]].image_preview
+		play_cursor_anim("ArrowBumpLeft")
 		Update_UI_Visuals(stages[stage_step], stage_image)
 		
 	if Input.is_action_just_pressed("attack1"):
@@ -41,3 +45,8 @@ func Update_UI_Visuals(nametag : String, stage_image):
 	StageNameTag.text = nametag
 	if stage_image != null:
 		ImagePreview.texture = stage_image
+
+func play_cursor_anim(anim):
+		var animplayer = cursor_arrows.get_node("AnimationPlayer")
+		animplayer.stop()
+		animplayer.play(anim)

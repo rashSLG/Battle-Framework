@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="StageInfo" load_steps=2 format=3 uid="uid://bmxbk0ljq4rcw"]
+[gd_resource type="Resource" script_class="StageInfo" load_steps=3 format=3 uid="uid://bmxbk0ljq4rcw"]
 
 [ext_resource type="Script" uid="uid://bh7hc4po624b3" path="res://levels/stage_info.gd" id="1_37uyw"]
+[ext_resource type="Texture2D" uid="uid://h60klqxxk3l" path="res://assets/ui/menus/map-select/fullicons/greenhillzone.png" id="1_obais"]
 
 [resource]
 script = ExtResource("1_37uyw")
 display_name = "Green Hill"
 music_file_path = "uid://rr4qiitydhis"
+image_preview = ExtResource("1_obais")
 metadata/_custom_type_script = "uid://bh7hc4po624b3"
