@@ -1,11 +1,21 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://kulyqmhcf2k2"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://kulyqmhcf2k2"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bl12xr1kfvop2" path="res://menus/character_select/character_select.gd" id="1_xptye"]
 [ext_resource type="PackedScene" uid="uid://dmqtdie76rgi8" path="res://menus/background.tscn" id="2_kxvnc"]
 [ext_resource type="Shader" uid="uid://b7frwxe5glvvi" path="res://menus/background.gdshader" id="3_xarbf"]
 [ext_resource type="Script" uid="uid://dkvj5h5bvohkv" path="res://menus/character_select/mapselect.gd" id="4_pprmj"]
 [ext_resource type="PackedScene" uid="uid://bu74bh1pcju6h" path="res://menus/character_select/cursor_arrows.tscn" id="4_xarbf"]
-[ext_resource type="Texture2D" uid="uid://dlpflfbgbkx5f" path="res://icon.png" id="5_3f6ee"]
+[ext_resource type="Texture2D" uid="uid://ct1tumve1adg2" path="res://assets/ui/menus/MAPtextsprite.png" id="5_4skbe"]
+[ext_resource type="Texture2D" uid="uid://b5xhjvi5qsaqq" path="res://assets/ui/menus/map-select/fullicons/amysroom.png" id="6_4skbe"]
+[ext_resource type="Texture2D" uid="uid://r0sjyk5g1urw" path="res://assets/ui/menus/mapselectborder.png" id="6_qenn8"]
+[ext_resource type="Texture2D" uid="uid://djybc7sc3sq64" path="res://assets/ui/menus/ruleiconsprite.png" id="8_qenn8"]
+[ext_resource type="Texture2D" uid="uid://c752j8nouy22v" path="res://assets/ui/menus/lilarrowup.png" id="9_1eeac"]
+[ext_resource type="Texture2D" uid="uid://bssfj42febu4g" path="res://assets/ui/menus/RULEtextsprite.png" id="9_kthgr"]
+[ext_resource type="Texture2D" uid="uid://buvlfi0tknbo2" path="res://assets/ui/menus/mapbuttoncss.png" id="11_1eeac"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pprmj"]
 shader = ExtResource("3_xarbf")
@@ -33,7 +43,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_pprmj")
 
+<<<<<<< Updated upstream
 [node name="StageSelect" type="OptionButton" parent="MAPSELECT" unique_id=798022778]
+=======
+[node name="TextureRect" type="TextureRect" parent="MAPSELECT"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 168.0
+offset_bottom = 40.0
+texture = ExtResource("5_4skbe")
+
+[node name="TextureRect2" type="TextureRect" parent="MAPSELECT"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_qenn8")
+
+[node name="StageSelect" type="OptionButton" parent="MAPSELECT"]
+>>>>>>> Stashed changes
 visible = false
 layout_mode = 0
 anchor_right = 1.0
@@ -48,21 +75,21 @@ focus_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="MAPSELECT" unique_id=718743662]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 144.0
-offset_bottom = 120.0
+offset_left = -28.0
+offset_top = 38.815
+offset_right = 108.0
+offset_bottom = 150.81502
 
 [node name="TextureRect" type="TextureRect" parent="MAPSELECT/CenterContainer" unique_id=751172665]
 layout_mode = 2
-texture = ExtResource("5_3f6ee")
+texture = ExtResource("6_4skbe")
 
 [node name="Label" type="Label" parent="MAPSELECT" unique_id=971147638]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 136.0
-offset_right = 109.0
-offset_bottom = 159.0
+offset_left = 125.0
+offset_top = 125.0
+offset_right = 194.0
+offset_bottom = 148.0
 text = "nametag"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MAPSELECT" unique_id=1773313247]
@@ -70,24 +97,36 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 112.0
-offset_top = 24.0
-offset_right = 200.0
-offset_bottom = 136.0
+offset_left = 45.0
+offset_top = 41.0
+offset_right = 191.0
+offset_bottom = 124.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MAPSELECT/ScrollContainer" unique_id=1000990436]
 layout_mode = 2
 
+<<<<<<< Updated upstream
 [node name="Label2" type="Label" parent="MAPSELECT" unique_id=1401911804]
+=======
+[node name="CursorArrows" parent="MAPSELECT" instance=ExtResource("4_xarbf")]
+>>>>>>> Stashed changes
 layout_mode = 0
-offset_left = 40.0
-offset_top = 32.0
-offset_right = 104.0
-offset_bottom = 81.0
-text = "Image 
-Preview"
-horizontal_alignment = 1
+offset_left = -17.01
+offset_top = 164.72
+offset_right = -17.01
+offset_bottom = 164.72
+rotation = -1.5707964
+scale = Vector2(0.9, 0.9)
+
+[node name="TextureRect3" type="TextureRect" parent="MAPSELECT"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 117.0
+offset_right = 190.00002
+offset_bottom = 157.00006
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_1eeac")
 
 [node name="CSS" type="Control" parent="." unique_id=1568437999]
 anchors_preset = 0
@@ -131,20 +170,37 @@ offset_bottom = 113.0
 text = "Placeholder!
 Check back later!"
 
+<<<<<<< Updated upstream
 [node name="MapSelectButton" type="Button" parent="." unique_id=355685157]
+=======
+[node name="TextureRect" type="TextureRect" parent="RULESELECT"]
+>>>>>>> Stashed changes
 layout_mode = 0
-offset_right = 52.0
-offset_bottom = 31.0
-focus_mode = 0
-text = "MAPS"
+offset_left = 80.0
+offset_right = 168.0
+offset_bottom = 40.0
+texture = ExtResource("8_qenn8")
 
+<<<<<<< Updated upstream
 [node name="RuleSelectButton" type="Button" parent="." unique_id=135965139]
+=======
+[node name="MapSelectButton" type="TextureButton" parent="."]
+>>>>>>> Stashed changes
 layout_mode = 0
-offset_left = 184.0
-offset_right = 241.0
-offset_bottom = 31.0
+offset_right = 64.0
+offset_bottom = 32.0
 focus_mode = 0
-text = "RULES"
+texture_normal = ExtResource("11_1eeac")
+stretch_mode = 4
+
+[node name="RuleSelectButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_right = 240.0
+offset_bottom = 32.0
+focus_mode = 0
+texture_normal = ExtResource("9_kthgr")
+stretch_mode = 4
 
 [node name="CSSSelectButton" type="Button" parent="." unique_id=2102311742]
 visible = false
@@ -156,3 +212,5 @@ text = "CHARS"
 [connection signal="pressed" from="MapSelectButton" to="." method="_on_map_select_button_pressed"]
 [connection signal="pressed" from="RuleSelectButton" to="." method="_on_rule_select_button_pressed"]
 [connection signal="pressed" from="CSSSelectButton" to="." method="_on_css_select_button_pressed"]
+
+[editable path="MAPSELECT/CursorArrows"]
