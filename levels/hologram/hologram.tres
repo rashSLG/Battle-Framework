@@ -1,15 +1,9 @@
-<<<<<<< Updated upstream
 [gd_resource type="Resource" script_class="StageInfo" format=3 uid="uid://dgt30oe8ecklk"]
-=======
-[gd_resource type="Resource" script_class="StageInfo" load_steps=3 format=3 uid="uid://dgt30oe8ecklk"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bh7hc4po624b3" path="res://levels/stage_info.gd" id="1_kj2wx"]
-[ext_resource type="Texture2D" uid="uid://qtebbs5i2age" path="res://assets/ui/menus/map-select/fullicons/colossuem.png" id="1_qdbcc"]
 
 [resource]
 script = ExtResource("1_kj2wx")
 display_name = "Hologram"
 music_file_path = "uid://cco6bisoiwv8a"
-image_preview = ExtResource("1_qdbcc")
 metadata/_custom_type_script = "uid://bh7hc4po624b3"

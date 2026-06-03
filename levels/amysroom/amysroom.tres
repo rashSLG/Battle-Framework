@@ -1,15 +1,9 @@
-<<<<<<< Updated upstream
 [gd_resource type="Resource" script_class="StageInfo" format=3 uid="uid://c604bw522othc"]
-=======
-[gd_resource type="Resource" script_class="StageInfo" load_steps=3 format=3 uid="uid://c604bw522othc"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bh7hc4po624b3" path="res://levels/stage_info.gd" id="1_2rewn"]
-[ext_resource type="Texture2D" uid="uid://b5xhjvi5qsaqq" path="res://assets/ui/menus/map-select/fullicons/amysroom.png" id="1_cob73"]
 
 [resource]
 script = ExtResource("1_2rewn")
 display_name = "Amy's Room"
 music_file_path = "uid://16nyrnonjdyo"
-image_preview = ExtResource("1_cob73")
 metadata/_custom_type_script = "uid://bh7hc4po624b3"
