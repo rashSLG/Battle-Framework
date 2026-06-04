@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ImagePreview = $CenterContainer/TextureRect
+@onready var ImagePreview = $TextureRect
 @onready var StageNameTag = $Label
 @onready var SelectedStageList = $ScrollContainer/VBoxContainer
 
@@ -13,19 +13,19 @@ func _ready() -> void:
 	stages = GameData.battle_stages
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("right1"):
+	if Input.is_action_just_pressed("ui_right1"):
 		stage_step += 1
 		if stage_step >= stages.size():
 			stage_step = 0
-		Update_UI_Visuals(stages[stage_step], null)
+		Update_UI_Visuals(GameData.get_stage_info(stages[stage_step]))
 		
-	if Input.is_action_just_pressed("left1"):
+	if Input.is_action_just_pressed("ui_left1"):
 		stage_step -= 1
 		if stage_step <= 0:
 			stage_step = stages.size() - 1
-		Update_UI_Visuals(stages[stage_step], null)
+		Update_UI_Visuals(GameData.get_stage_info(stages[stage_step]))
 		
-	if Input.is_action_just_pressed("attack1"):
+	if Input.is_action_just_pressed("ui_accept1"):
 		if selected_stages.size() < max_selected_stages:
 			selected_stages.append(stages[stage_step])
 			var new_nametag = Label.new()
@@ -34,8 +34,7 @@ func _process(delta: float) -> void:
 		else:
 			print("maximum number of stages selected!")
 
-func Update_UI_Visuals(nametag : String, stage_image):
-	#for now, i'm skipping the image
-	StageNameTag.text = nametag
-	if stage_image != null:
-		ImagePreview.texture = stage_image
+func Update_UI_Visuals(stage : StageInfo):
+	StageNameTag.text = stage.display_name
+	if stage.stage_preview != null:
+		ImagePreview.texture = stage.stage_preview

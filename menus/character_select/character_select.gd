@@ -6,7 +6,7 @@ const PLAYER_CHARACTER_SCENE := preload("res://menus/character_select/player_cha
 # Arrows for selecting characters in solo play and selecting CPU characters
 @onready var cursor_arrows : Control = $CSS/CursorArrows
 @onready var map_select : Control = $MAPSELECT
-
+@onready var rule_select = $RULESELECT
 var current_player = 1
 
 var active_player_nodes = []
@@ -42,6 +42,19 @@ func _ready() -> void:
 
 	for stage in GameData.modded_battle_stages:
 		$MAPSELECT/StageSelect.add_item(stage + " (MOD)")
+
+func _process(delta: float) -> void:
+	if PlayerInput.player_action_just_pressed("ui_left_corner", 1):
+		if map_select.visible == false:
+			_on_map_select_button_pressed()
+		else:
+			_on_css_select_button_pressed()
+	
+	if PlayerInput.player_action_just_pressed("ui_right_corner", 1):
+		if rule_select.visible == false:
+			_on_rule_select_button_pressed()
+		else:
+			_on_css_select_button_pressed()
 
 func _on_player_selection_finished(plrnum):
 	var current_player_node = player_container.get_child(plrnum - 1)
@@ -109,15 +122,14 @@ func play_cursor_anim(anim):
 	else:
 		animplayer.play(anim)
 
+
+
 ##    VVVV THESE ARE PLACEHOLDER AND NEED TO BE CHANGED WITH BETTER REFS VVVV
 
 func _on_map_select_button_pressed() -> void:
 	$CSS.process_mode = Node.PROCESS_MODE_DISABLED
 	$MAPSELECT.process_mode = Node.PROCESS_MODE_INHERIT
 	$MAPSELECT.visible = true
-	$MapSelectButton.visible = false
-	$CSSSelectButton.visible = true
-	$CSSSelectButton.position = $MapSelectButton.position
 	$RULESELECT.visible = false
 	$CSS.visible = false
 	# Reset stage index when entering map select like in the original
@@ -128,10 +140,6 @@ func _on_rule_select_button_pressed() -> void:
 	$CSS.process_mode = Node.PROCESS_MODE_DISABLED
 	$MAPSELECT.process_mode = Node.PROCESS_MODE_DISABLED
 	$MAPSELECT.visible = false
-	$RuleSelectButton.visible = false
-	$CSSSelectButton.visible = true
-	$MapSelectButton.visible = true
-	$CSSSelectButton.position = $RuleSelectButton.position
 	$RULESELECT.visible = true
 	$CSS.visible = false
 
@@ -139,8 +147,5 @@ func _on_css_select_button_pressed() -> void:
 	$CSS.process_mode = Node.PROCESS_MODE_INHERIT
 	$MAPSELECT.process_mode = Node.PROCESS_MODE_DISABLED
 	$MAPSELECT.visible = false
-	$RuleSelectButton.visible = true
-	$MapSelectButton.visible = true
-	$CSSSelectButton.visible = false
 	$RULESELECT.visible = false
 	$CSS.visible = true

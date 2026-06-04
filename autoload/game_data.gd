@@ -1,6 +1,7 @@
 extends Node
 
 var _character_info_dict: Dictionary[String, CharacterInfo]
+var _stage_info_dict: Dictionary[String, StageInfo]
 
 var characters: Array[String] = [
 	"sonic", 
@@ -31,6 +32,8 @@ func _init() -> void:
 	# Preload all CharacterInfo resources
 	for character in characters:
 		_character_info_dict[character] = load("res://characters/%s/%s.tres" % [character, character])
+	for stage in battle_stages:
+		_stage_info_dict[stage] = load("res://levels/%s/%s.tres" % [stage, stage])
 
 
 func _ready() -> void:
@@ -64,3 +67,7 @@ func _ready() -> void:
 func get_character_info(character_name: String):
 	assert(_character_info_dict.has(character_name), "Cannot find CharacterInfo for %s" % character_name)
 	return _character_info_dict[character_name]
+
+func get_stage_info(stage_name: String):
+	assert(_stage_info_dict.has(stage_name), "Cannot find CharacterInfo for %s" % stage_name)
+	return _stage_info_dict[stage_name]
