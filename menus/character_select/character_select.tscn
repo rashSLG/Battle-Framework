@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dkvj5h5bvohkv" path="res://menus/character_select/mapselect.gd" id="4_pprmj"]
 [ext_resource type="PackedScene" uid="uid://bu74bh1pcju6h" path="res://menus/character_select/cursor_arrows.tscn" id="4_xarbf"]
 [ext_resource type="Texture2D" uid="uid://cmbb71hbohxql" path="res://assets/ui/menus/map_select/amysroom.png" id="5_jc553"]
+[ext_resource type="Texture2D" uid="uid://bh4u8uotwimg3" path="res://assets/ui/menus/barwhitenoborder.png" id="6_4skbe"]
 [ext_resource type="Texture2D" uid="uid://l3jxfx1pr208" path="res://assets/ui/menus/map_select/mapselectborder.png" id="7_jc553"]
+[ext_resource type="FontFile" uid="uid://dq6gt5wl6xywx" path="res://assets/fonts/m3x6.ttf" id="7_qenn8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pprmj"]
 shader = ExtResource("3_xarbf")
@@ -55,12 +57,24 @@ offset_bottom = 119.0
 texture = ExtResource("5_jc553")
 stretch_mode = 2
 
+[node name="namebkg" type="TextureRect" parent="MAPSELECT" unique_id=758757953]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 120.0
+offset_right = 265.0
+offset_bottom = 152.0
+scale = Vector2(0.84, 1)
+texture = ExtResource("6_4skbe")
+
 [node name="Label" type="Label" parent="MAPSELECT" unique_id=971147638]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 123.0
-offset_right = 159.0
-offset_bottom = 146.0
+offset_left = 97.0
+offset_top = 118.0
+offset_right = 166.0
+offset_bottom = 147.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_qenn8")
+theme_override_font_sizes/font_size = 32
 text = "nametag"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MAPSELECT" unique_id=1773313247]
@@ -68,10 +82,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 40.0
-offset_top = 37.0
-offset_right = 195.0
-offset_bottom = 128.0
+offset_left = 42.0
+offset_top = 39.0
+offset_right = 194.0
+offset_bottom = 127.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MAPSELECT/ScrollContainer" unique_id=1000990436]
@@ -82,6 +96,15 @@ layout_mode = 0
 offset_right = 240.0
 offset_bottom = 160.0
 texture = ExtResource("7_jc553")
+
+[node name="CursorArrows" parent="MAPSELECT" unique_id=164803946 instance=ExtResource("4_xarbf")]
+layout_mode = 0
+offset_left = 89.00001
+offset_top = 37.0
+offset_right = 89.00001
+offset_bottom = 37.0
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
 
 [node name="CSS" type="Control" parent="." unique_id=1568437999]
 anchors_preset = 0
@@ -124,3 +147,5 @@ offset_right = 188.0
 offset_bottom = 113.0
 text = "Placeholder!
 Check back later!"
+
+[editable path="MAPSELECT/CursorArrows"]

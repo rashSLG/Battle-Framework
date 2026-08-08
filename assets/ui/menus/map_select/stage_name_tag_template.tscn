@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ly3vevl72oje"]
+
+[ext_resource type="Texture2D" uid="uid://bh4u8uotwimg3" path="res://assets/ui/menus/barwhitenoborder.png" id="1_u4v2h"]
+[ext_resource type="FontFile" uid="uid://dq6gt5wl6xywx" path="res://assets/fonts/m3x6.ttf" id="2_l6spx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8sb4"]
+font = ExtResource("2_l6spx")
+font_size = 35
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="StageNameTagTemplate" type="Control" unique_id=2086690425]
+z_as_relative = false
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -64.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="stagename" type="Label" parent="." unique_id=981823991]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 173.0
+offset_bottom = 21.0
+text = "Emerald Coast"
+label_settings = SubResource("LabelSettings_u8sb4")
+horizontal_alignment = 1
+
+[node name="stagenumber" type="Label" parent="." unique_id=1333122938]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 21.0
+text = "0"
+label_settings = SubResource("LabelSettings_u8sb4")
+horizontal_alignment = 1
+
+[node name="bkg" type="TextureRect" parent="." unique_id=1224404161]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -10.0
+offset_right = 182.0
+offset_bottom = 30.0
+texture = ExtResource("1_u4v2h")

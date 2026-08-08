@@ -8,4 +8,5 @@ script = ExtResource("1_2rewn")
 display_name = "Amy's Room"
 music_file_path = "uid://16nyrnonjdyo"
 stage_preview = ExtResource("2_cob73")
+stage_color = Color(1, 0.64705884, 0.9372549, 1)
 metadata/_custom_type_script = "uid://bh7hc4po624b3"
